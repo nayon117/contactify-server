@@ -1,5 +1,5 @@
 var express = require("express");
-const { createContact, getAllContact, getOneContact, updateContact } = require("../../api/contacts/controllers");
+const { createContact, getAllContact, getOneContact, updateContact, deleteContact } = require("../../api/contacts/controllers");
 var router = express.Router()
 
 router.post('/contacts', createContact)
