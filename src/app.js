@@ -2,9 +2,10 @@ const express = require('express');
 require("dotenv").config();
 const app = express();
 
-const contactRoutes = require('./routes/contacts/index');
 const applyMiddleware = require('./middlewares/applyMiddleware');
 const connectDB = require('./db/connectDB.JS');
+const contactRoutes = require('./routes/contacts/index');
+const cartRoutes = require('./routes/carts/index');
 
 // middleware
 applyMiddleware(app);
@@ -14,6 +15,7 @@ connectDB();
 
 // routes
 app.use(contactRoutes)
+app.use(cartRoutes)
 
 // server starting point
 app.get("/", (req, res) => {

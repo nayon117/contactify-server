@@ -9,7 +9,7 @@ const contactSchema = new mongoose.Schema({
   email: {
     type: String,
   },
-  phoneNumber: {
+  phone: {
     type: String,
     required: true
   },
@@ -17,10 +17,11 @@ const contactSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  profilePicture: {
+  picture: {
     type: String,
+    required: true
   }
-});
+},{versionKey: false});
 
 // model for using the schema
 const Contact = mongoose.model('Contact', contactSchema);
